@@ -18,11 +18,21 @@ def sales_analytics(req: func.HttpRequest) -> func.HttpResponse:
     STORAGE_ACCOUNT_URL = os.environ.get("AZURE_STORAGE_ACCOUNT_URL")
 
     if not STORAGE_ACCOUNT_URL:
-        return func.HttpResponse(
-            json.dumps({"error": "AZURE_STORAGE_ACCOUNT_URL not configured"}),
-            status_code=500,
-            mimetype="application/json"
-        )
+        logging.info("AZURE_STORAGE_ACCOUNT_URL not set. Attempting to read local file for simulation.")
+        try:
+            with open("aggregated_sales.json", "r") as f:
+                sales_data = json.load(f)
+            return func.HttpResponse(
+                json.dumps(sales_data),
+                status_code=200,
+                mimetype="application/json"
+            )
+        except Exception as e:
+            return func.HttpResponse(
+                json.dumps({"error": f"Configuration missing and local file not found: {e}"}),
+                status_code=500,
+                mimetype="application/json"
+            )
 
     try:
         # Use Managed Identity in cloud, or CLI credential locally
