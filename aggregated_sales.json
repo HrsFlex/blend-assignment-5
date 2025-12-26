@@ -1,0 +1,19 @@
+{
+    "total_revenue": 78592678.30000001,
+    "total_orders": 113030,
+    "average_order_value": 695.3258276563745,
+    "top_region": "MAHARASHTRA",
+    "sales_by_category": {
+        "Blouse": 458408.18,
+        "Bottom": 150667.98,
+        "Dupatta": 915.0,
+        "Ethnic Dress": 791217.66,
+        "Saree": 123933.76,
+        "Set": 39204124.03,
+        "Top": 5347792.3,
+        "Western Dress": 11216072.69,
+        "kurta": 21299546.7
+    },
+    "recent_sales_30_days": 24328878.47,
+    "generated_at": "2025-12-26T12:54:18.331799"
+}

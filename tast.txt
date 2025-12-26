@@ -1,13 +1,18 @@
 Deploy Sales ETL as a Serverless Function
+
 Goal:
 Deploy the output of your ETL pipeline as a cloud-based analytics API.
+
 Tasks:
 Use the ETL output stored in AWS S3 or Azure Blob Storage.
+
 Create an AWS Lambda or Azure Function that:
 Reads aggregated sales data.
 Runs KPI calculations (e.g., total revenue, top region).
 Returns results as JSON via API Gateway / Azure HTTP Trigger.
 Configure a scheduled trigger (e.g., CloudWatch/EventBridge).
 Log execution results to CloudWatch or Application Insights.
+
 Tech: AWS Lambda / Azure Functions, Boto3 / Azure SDK
+
 Deliverables: Deployed function link + code repo + screenshots (Lambda/Function console, API JSON response, logs)
